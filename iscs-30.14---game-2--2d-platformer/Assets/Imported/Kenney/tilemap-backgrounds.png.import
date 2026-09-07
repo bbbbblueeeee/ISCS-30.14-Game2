@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p15wch5ethdi"
-path="res://.godot/imported/fruit.png-5ea7a4b925a94ae23730b02f6e7b4ad6.ctex"
+uid="uid://bb4y0he767sfc"
+path="res://.godot/imported/tilemap-backgrounds.png-817bf5c8da0ba33267982a8927c6cde8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imported/sprites/fruit.png"
-dest_files=["res://.godot/imported/fruit.png-5ea7a4b925a94ae23730b02f6e7b4ad6.ctex"]
+source_file="res://Assets/Imported/Kenney/tilemap-backgrounds.png"
+dest_files=["res://.godot/imported/tilemap-backgrounds.png-817bf5c8da0ba33267982a8927c6cde8.ctex"]
 
 [params]
 

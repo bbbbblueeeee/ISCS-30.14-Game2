@@ -1,46 +1,24 @@
 [gd_scene format=3 uid="uid://itmgpuiu8df0"]
 
-[ext_resource type="Texture2D" uid="uid://bipor1hifuijj" path="res://Assets/Imported/sprites/knight.png" id="1_lkv7d"]
 [ext_resource type="Script" uid="uid://qwecvtndghr3" path="res://Scripts/character.gd" id="1_ushfy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ushfy"]
-atlas = ExtResource("1_lkv7d")
-region = Rect2(0, 0, 32, 32)
+[ext_resource type="Texture2D" uid="uid://2tpp6abxxuk6" path="res://Assets/Imported/Kenney/tilemap-characters.png" id="2_ushfy"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_owm7s"]
-atlas = ExtResource("1_lkv7d")
-region = Rect2(32, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
-atlas = ExtResource("1_lkv7d")
-region = Rect2(64, 0, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejsiy"]
-atlas = ExtResource("1_lkv7d")
-region = Rect2(96, 0, 32, 32)
+atlas = ExtResource("2_ushfy")
+region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ushfy")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_owm7s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nytcm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ejsiy")
 }],
 "loop": 1,
 "name": &"idle",
 "speed": 7.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd078"]
-size = Vector2(12, 18)
+[sub_resource type="CircleShape2D" id="CircleShape2D_ushfy"]
 
 [node name="Character" type="CharacterBody2D" unique_id=1376504322]
 script = ExtResource("1_ushfy")
@@ -49,9 +27,7 @@ script = ExtResource("1_ushfy")
 sprite_frames = SubResource("SpriteFrames_sd078")
 animation = &"idle"
 autoplay = "idle"
-frame = 1
 frame_progress = 0.47646868
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1982194937]
-position = Vector2(0, 3)
-shape = SubResource("RectangleShape2D_sd078")
+shape = SubResource("CircleShape2D_ushfy")

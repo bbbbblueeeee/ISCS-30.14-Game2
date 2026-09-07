@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://didq2xqohefoc"
-path="res://.godot/imported/slime_green.png-1c7e161856db82b0dab0914b8c90d848.ctex"
+uid="uid://cex50r05civ4b"
+path="res://.godot/imported/platforms.png-81a9dae98e3613cb88ee0c4737e49740.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imported/sprites/slime_green.png"
-dest_files=["res://.godot/imported/slime_green.png-1c7e161856db82b0dab0914b8c90d848.ctex"]
+source_file="res://Assets/Imported/Brackeys/sprites/platforms.png"
+dest_files=["res://.godot/imported/platforms.png-81a9dae98e3613cb88ee0c4737e49740.ctex"]
 
 [params]
 
