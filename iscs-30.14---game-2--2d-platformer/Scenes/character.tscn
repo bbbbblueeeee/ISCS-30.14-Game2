@@ -7,6 +7,14 @@
 atlas = ExtResource("2_ushfy")
 region = Rect2(0, 0, 24, 24)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ushfy"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(25, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
+atlas = ExtResource("2_ushfy")
+region = Rect2(0, 0, 24, 24)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
 animations = [{
 "frames": [{
@@ -16,6 +24,25 @@ animations = [{
 "loop": 1,
 "name": &"idle",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ushfy")
+}],
+"loop": 1,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nytcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ushfy")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 6.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nytcm"]
@@ -27,9 +54,9 @@ script = ExtResource("1_ushfy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1484172025]
 sprite_frames = SubResource("SpriteFrames_sd078")
-animation = &"idle"
+animation = &"walking"
 autoplay = "idle"
-frame_progress = 0.47646868
+frame_progress = 0.9424417
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1982194937]
 position = Vector2(0, 0.5)
