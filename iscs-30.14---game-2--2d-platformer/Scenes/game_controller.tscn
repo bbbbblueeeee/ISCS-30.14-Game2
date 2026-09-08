@@ -2,6 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3rkuiaesmk7o" path="res://Scenes/world.tscn" id="1_kx2cw"]
 [ext_resource type="PackedScene" uid="uid://itmgpuiu8df0" path="res://Scenes/character.tscn" id="1_nqxm2"]
+[ext_resource type="PackedScene" uid="uid://dned8iad2t0n" path="res://Scenes/diamond_pickup.tscn" id="3_goscw"]
 
 [node name="GameController" type="Node2D" unique_id=1808007495]
 
@@ -11,3 +12,6 @@
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(4.17, 4.17)
+
+[node name="Diamond Pickup" parent="." unique_id=1783640914 instance=ExtResource("3_goscw")]
+position = Vector2(-288, 36)

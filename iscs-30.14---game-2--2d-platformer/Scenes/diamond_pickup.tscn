@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://dned8iad2t0n"]
+
+[ext_resource type="Texture2D" uid="uid://rwt3m2hn6j6o" path="res://Assets/Imported/Kenney/tilemap-base_tiles.png" id="1_cg4os"]
+[ext_resource type="Script" uid="uid://sgia1tluo30p" path="res://Scripts/diamond_pickup.gd" id="1_pisg0"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pisg0"]
+atlas = ExtResource("1_cg4os")
+region = Rect2(133, 57, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pisg0")
+}],
+"loop": 1,
+"name": &"texture",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sd078"]
+radius = 6.0
+
+[node name="Diamond Pickup" type="Area2D" unique_id=1783640914]
+collision_mask = 2
+script = ExtResource("1_pisg0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1175515664]
+sprite_frames = SubResource("SpriteFrames_sd078")
+animation = &"texture"
+autoplay = "texture"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2133840554]
+shape = SubResource("CircleShape2D_sd078")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
