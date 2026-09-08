@@ -2,9 +2,11 @@
 
 [ext_resource type="PackedScene" uid="uid://3rkuiaesmk7o" path="res://Scenes/world.tscn" id="1_kx2cw"]
 [ext_resource type="PackedScene" uid="uid://itmgpuiu8df0" path="res://Scenes/character.tscn" id="1_nqxm2"]
+[ext_resource type="Script" uid="uid://b3goba52yoc1g" path="res://Scripts/game_controller.gd" id="1_ppfu0"]
 [ext_resource type="PackedScene" uid="uid://dned8iad2t0n" path="res://Scenes/diamond_pickup.tscn" id="3_goscw"]
 
 [node name="GameController" type="Node2D" unique_id=1808007495]
+script = ExtResource("1_ppfu0")
 
 [node name="World" parent="." unique_id=1294336100 instance=ExtResource("1_kx2cw")]
 

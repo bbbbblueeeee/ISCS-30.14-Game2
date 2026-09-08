@@ -35,12 +35,12 @@ autoplay = "texture"
 shape = SubResource("CircleShape2D_sd078")
 
 [node name="Collect Text" type="Label" parent="." unique_id=761438652]
-offset_left = -41.0
-offset_top = -8.0
-offset_right = 42.0
-offset_bottom = 11.0
+offset_left = -32.0
+offset_top = -7.0
+offset_right = 31.0
+offset_bottom = 10.0
 theme_override_fonts/font = ExtResource("3_5l11i")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 6
 text = "Double Jump
 Unlocked!"
 horizontal_alignment = 1

@@ -3,7 +3,8 @@ extends CharacterBody2D
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
-var can_double_jump = false
+var double_jump_unlocked: bool = false
+var can_double_jump: bool = false
 
 
 func _physics_process(delta: float) -> void:
@@ -19,6 +20,7 @@ func _physics_process(delta: float) -> void:
 		can_double_jump = false
 	elif is_on_floor():
 		can_double_jump = true
+		
 	
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -34,4 +36,7 @@ func is_jumping_on_ground():
 	return Input.is_action_just_pressed("ui_accept") and is_on_floor()
 
 func is_double_jumping():
-	return Input.is_action_just_pressed("ui_accept") and can_double_jump
+	return Input.is_action_just_pressed("ui_accept") and can_double_jump and double_jump_unlocked
+
+func unlock_double_jump():
+	double_jump_unlocked = true
