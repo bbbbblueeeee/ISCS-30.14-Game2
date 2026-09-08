@@ -46,7 +46,8 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nytcm"]
-height = 23.0
+radius = 11.0
+height = 25.0
 
 [node name="Character" type="CharacterBody2D" unique_id=1376504322]
 collision_layer = 2
@@ -56,8 +57,7 @@ script = ExtResource("1_ushfy")
 sprite_frames = SubResource("SpriteFrames_sd078")
 animation = &"walking"
 autoplay = "idle"
-frame_progress = 0.9424417
+frame_progress = 0.34627047
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1982194937]
-position = Vector2(0, 0.5)
 shape = SubResource("CapsuleShape2D_nytcm")

@@ -3,17 +3,27 @@
 [ext_resource type="PackedScene" uid="uid://3rkuiaesmk7o" path="res://Scenes/world.tscn" id="1_kx2cw"]
 [ext_resource type="PackedScene" uid="uid://itmgpuiu8df0" path="res://Scenes/character.tscn" id="1_nqxm2"]
 [ext_resource type="Script" uid="uid://b3goba52yoc1g" path="res://Scripts/game_controller.gd" id="1_ppfu0"]
+[ext_resource type="PackedScene" uid="uid://cqya55kqk1qvr" path="res://Scenes/killzone.tscn" id="3_7la68"]
 [ext_resource type="PackedScene" uid="uid://dned8iad2t0n" path="res://Scenes/diamond_pickup.tscn" id="3_goscw"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sd078"]
 
 [node name="GameController" type="Node2D" unique_id=1808007495]
 script = ExtResource("1_ppfu0")
 
 [node name="World" parent="." unique_id=1294336100 instance=ExtResource("1_kx2cw")]
 
+[node name="Killzone" parent="World" unique_id=1016709235 instance=ExtResource("3_7la68")]
+position = Vector2(-1, 275)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/Killzone" unique_id=1816117509]
+shape = SubResource("WorldBoundaryShape2D_sd078")
+
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(4.17, 4.17)
+limit_bottom = 240
 
 [node name="Diamond Pickup" parent="." unique_id=1783640914 instance=ExtResource("3_goscw")]
 position = Vector2(-288, 36)
