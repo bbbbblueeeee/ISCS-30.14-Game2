@@ -9,7 +9,7 @@ signal player_unlocked_double_jump
 func _ready() -> void:
 	text.hide()
 
-func _on_body_entered(body: Node2D) -> void:
+func _on_body_entered(_body: Node2D) -> void:
 	player_unlocked_double_jump.emit()
 	hitbox.queue_free()
 	sprite.queue_free()
