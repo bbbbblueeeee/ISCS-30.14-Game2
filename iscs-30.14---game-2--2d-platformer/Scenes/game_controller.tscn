@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b3goba52yoc1g" path="res://Scripts/game_controller.gd" id="1_ppfu0"]
 [ext_resource type="PackedScene" uid="uid://cqya55kqk1qvr" path="res://Scenes/killzone.tscn" id="3_7la68"]
 [ext_resource type="PackedScene" uid="uid://dned8iad2t0n" path="res://Scenes/diamond_pickup.tscn" id="3_goscw"]
+[ext_resource type="PackedScene" uid="uid://bf3wry4idqq15" path="res://Scenes/enemy.tscn" id="4_k0qbb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sd078"]
 distance = -36.0
@@ -25,8 +26,19 @@ shape = SubResource("WorldBoundaryShape2D_sd078")
 position = Vector2(-432, -87)
 
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
-position = Vector2(205, -38)
+position = Vector2(850, -123)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(3.05, 3.05)
 limit_bottom = 400
+
+[node name="Enemy" type="Node2D" parent="." unique_id=745798073]
+
+[node name="small-critter" parent="Enemy" unique_id=383263728 instance=ExtResource("4_k0qbb")]
+position = Vector2(608, 240)
+
+[node name="small-critter2" parent="Enemy" unique_id=1171490834 instance=ExtResource("4_k0qbb")]
+position = Vector2(791, -102)
+
+[node name="small-critter3" parent="Enemy" unique_id=2011993850 instance=ExtResource("4_k0qbb")]
+position = Vector2(-3, 6)

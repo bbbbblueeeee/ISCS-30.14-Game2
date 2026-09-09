@@ -57,7 +57,6 @@ script = ExtResource("1_ushfy")
 sprite_frames = SubResource("SpriteFrames_sd078")
 animation = &"walking"
 autoplay = "idle"
-frame_progress = 0.34627047
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1982194937]
 shape = SubResource("CapsuleShape2D_nytcm")
