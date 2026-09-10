@@ -4,14 +4,14 @@ extends Area2D
 # will have a killzone. Then, add a CollisionShape2D child node to it
 # and set its shape. This should make the Killzone work.
 
-@onready var timer: Timer = $Timer
-
 
 func _on_body_entered(_body: Node2D) -> void:
 	print("Death!")
-	timer.start()
+	SignalBus.player_died.emit()
 
-# Need to change how this works if you want to do lives
-# Reloading the current scene resets everything
+# Useless function. Erase this + the Timer at the end when you're sure of
+# no bugs.
 func _on_timer_timeout() -> void:
-	get_tree().reload_current_scene()
+	pass
+	# Engine.time_scale = 1.0
+	# get_tree().reload_current_scene()

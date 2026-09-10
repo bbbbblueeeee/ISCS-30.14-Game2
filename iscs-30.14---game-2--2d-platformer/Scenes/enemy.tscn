@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ckv4ugl3pbsco" path="res://Scripts/enemy.gd" id="1_1f0kj"]
 [ext_resource type="Texture2D" uid="uid://2tpp6abxxuk6" path="res://Assets/Imported/Kenney/tilemap-characters.png" id="1_hghv2"]
+[ext_resource type="PackedScene" uid="uid://cqya55kqk1qvr" path="res://Scenes/killzone.tscn" id="2_afpow"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1f0kj"]
 atlas = ExtResource("1_hghv2")
@@ -44,6 +45,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_287tu"]
+size = Vector2(14, 11)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pqqld"]
 size = Vector2(12, 9)
 
@@ -56,6 +60,12 @@ sprite_frames = SubResource("SpriteFrames_pqqld")
 animation = &"walking"
 autoplay = "walking"
 frame_progress = 0.8290698
+
+[node name="Killzone" parent="." unique_id=1016709235 instance=ExtResource("2_afpow")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=1480213690]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_287tu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1858000933]
 position = Vector2(0, 5.5)

@@ -60,3 +60,9 @@ autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1982194937]
 shape = SubResource("CapsuleShape2D_nytcm")
+
+[node name="RespawnTimer" type="Timer" parent="." unique_id=1673699524]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="timeout" from="RespawnTimer" to="." method="respawn"]

@@ -26,7 +26,7 @@ shape = SubResource("WorldBoundaryShape2D_sd078")
 position = Vector2(-432, -87)
 
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
-position = Vector2(850, -123)
+position = Vector2(152, -48)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(3.05, 3.05)
