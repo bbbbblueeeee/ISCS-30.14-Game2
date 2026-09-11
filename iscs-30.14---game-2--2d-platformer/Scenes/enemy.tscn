@@ -23,15 +23,27 @@ region = Rect2(25, 50, 25, 24)
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqqld"]
 animations = [{
 "frames": [{
-"duration": 1.0,
+"duration": 2.0,
 "texture": SubResource("AtlasTexture_1f0kj")
 }, {
-"duration": 5.0,
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_afpow")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1f0kj")
+}, {
+"duration": 3.0,
+"texture": SubResource("AtlasTexture_afpow")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_1f0kj")
+}, {
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_afpow")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"death",
-"speed": 10.0
+"speed": 15.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -57,9 +69,10 @@ script = ExtResource("1_1f0kj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1566523230]
 sprite_frames = SubResource("SpriteFrames_pqqld")
-animation = &"walking"
+animation = &"death"
 autoplay = "walking"
-frame_progress = 0.8290698
+frame = 5
+frame_progress = 1.0
 
 [node name="Killzone" parent="." unique_id=1016709235 instance=ExtResource("2_afpow")]
 

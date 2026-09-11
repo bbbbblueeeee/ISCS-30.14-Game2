@@ -50,7 +50,6 @@ func _physics_process(delta: float) -> void:
 				
 		move_and_slide()
 
-
 func is_jumping_on_ground():
 	return Input.is_action_just_pressed("ui_accept") and is_on_floor()
 
@@ -59,6 +58,9 @@ func is_double_jumping():
 
 func unlock_double_jump():
 	double_jump_unlocked = true
+
+func jump_on_enemy():
+	velocity.y = JUMP_VELOCITY
 
 func death():
 	if is_alive:
