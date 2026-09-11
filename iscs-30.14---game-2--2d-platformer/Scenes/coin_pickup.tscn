@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bkf4m33tfx6gk"]
+
+[ext_resource type="Script" uid="uid://i7ywg1dde5lu" path="res://Scenes/coin_pickup.gd" id="1_ugo37"]
+[ext_resource type="Texture2D" uid="uid://rwt3m2hn6j6o" path="res://Assets/Imported/Kenney/tilemap-base_tiles.png" id="2_4shbp"]
+[ext_resource type="FontFile" uid="uid://m2tysrki5bef" path="res://Assets/Imported/Brackeys/fonts/PixelOperator8-Bold.ttf" id="3_3ufb4"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l11i"]
+atlas = ExtResource("2_4shbp")
+region = Rect2(209, 135, 19, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_25i6n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5l11i")
+}],
+"loop": 1,
+"name": &"texture",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_42pb2"]
+radius = 6.0
+
+[node name="Coin Pickup" type="Area2D" unique_id=780580374]
+script = ExtResource("1_ugo37")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1581053536]
+sprite_frames = SubResource("SpriteFrames_25i6n")
+animation = &"texture"
+autoplay = "texture"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343402930]
+shape = SubResource("CircleShape2D_42pb2")
+
+[node name="Collect Text" type="Label" parent="." unique_id=1820900117]
+offset_left = -41.0
+offset_top = -8.0
+offset_right = 42.0
+offset_bottom = 11.0
+theme_override_fonts/font = ExtResource("3_3ufb4")
+theme_override_font_sizes/font_size = 8
+text = "Dash
+Unlocked!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
