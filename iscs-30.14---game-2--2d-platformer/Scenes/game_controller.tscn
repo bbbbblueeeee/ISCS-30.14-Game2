@@ -5,6 +5,7 @@
 [ext_resource type="Script" uid="uid://b3goba52yoc1g" path="res://Scripts/game_controller.gd" id="1_ppfu0"]
 [ext_resource type="PackedScene" uid="uid://cqya55kqk1qvr" path="res://Scenes/killzone.tscn" id="3_7la68"]
 [ext_resource type="PackedScene" uid="uid://dned8iad2t0n" path="res://Scenes/diamond_pickup.tscn" id="3_goscw"]
+[ext_resource type="PackedScene" uid="uid://vaime48v1to1" path="res://Scenes/bird.tscn" id="4_g3622"]
 [ext_resource type="PackedScene" uid="uid://bf3wry4idqq15" path="res://Scenes/enemy.tscn" id="4_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://bkf4m33tfx6gk" path="res://Scenes/coin_pickup.tscn" id="5_27abl"]
 [ext_resource type="AudioStream" uid="uid://dgpdlcpud81em" path="res://Assets/Imported/Blue Archive OST 16. MX Adventure.mp3" id="6_k0qbb"]
@@ -25,6 +26,16 @@ position = Vector2(-1, 275)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Killzone" unique_id=1816117509]
 position = Vector2(2, 110)
 shape = SubResource("WorldBoundaryShape2D_sd078")
+
+[node name="Birds" type="Node2D" parent="World" unique_id=1748924274]
+
+[node name="Bird1" parent="World/Birds" unique_id=942859575 instance=ExtResource("4_g3622")]
+position = Vector2(800, -250)
+
+[node name="Bird2" parent="World/Birds" unique_id=577817231 instance=ExtResource("4_g3622")]
+position = Vector2(623, -80)
+min_x = 300.0
+max_x = 625.0
 
 [node name="Diamond Pickup" parent="." unique_id=1783640914 instance=ExtResource("3_goscw")]
 position = Vector2(-432, -87)
@@ -51,7 +62,7 @@ position = Vector2(20, -53)
 position = Vector2(-3, 6)
 
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
-position = Vector2(881, -124)
+position = Vector2(-35, -94)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(3.05, 3.05)
