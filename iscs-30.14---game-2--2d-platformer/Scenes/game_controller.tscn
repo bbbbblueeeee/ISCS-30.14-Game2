@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://cqya55kqk1qvr" path="res://Scenes/killzone.tscn" id="3_7la68"]
 [ext_resource type="PackedScene" uid="uid://dned8iad2t0n" path="res://Scenes/diamond_pickup.tscn" id="3_goscw"]
 [ext_resource type="PackedScene" uid="uid://bf3wry4idqq15" path="res://Scenes/enemy.tscn" id="4_k0qbb"]
+[ext_resource type="PackedScene" uid="uid://bkf4m33tfx6gk" path="res://Scenes/coin_pickup.tscn" id="5_27abl"]
+[ext_resource type="AudioStream" uid="uid://dgpdlcpud81em" path="res://Assets/Imported/Blue Archive OST 16. MX Adventure.mp3" id="6_k0qbb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sd078"]
 distance = -36.0
@@ -25,6 +27,10 @@ shape = SubResource("WorldBoundaryShape2D_sd078")
 [node name="Diamond Pickup" parent="." unique_id=1783640914 instance=ExtResource("3_goscw")]
 position = Vector2(-432, -87)
 
+[node name="Coin Pickup" parent="." unique_id=780580374 instance=ExtResource("5_27abl")]
+position = Vector2(903, 130)
+collision_mask = 2
+
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
 position = Vector2(152, -48)
 
@@ -42,3 +48,10 @@ position = Vector2(791, -102)
 
 [node name="small-critter3" parent="Enemy" unique_id=2011993850 instance=ExtResource("4_k0qbb")]
 position = Vector2(-3, 6)
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=836268484]
+stream = ExtResource("6_k0qbb")
+volume_db = -15.0
+autoplay = true
+parameters/looping = true
+
+[connection signal="player_unlocked_dash" from="Coin Pickup" to="Character" method="unlock_dash"]

@@ -4,15 +4,15 @@
 [ext_resource type="Script" uid="uid://sgia1tluo30p" path="res://Scripts/diamond_pickup.gd" id="1_pisg0"]
 [ext_resource type="FontFile" uid="uid://m2tysrki5bef" path="res://Assets/Imported/Brackeys/fonts/PixelOperator8-Bold.ttf" id="3_5l11i"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pisg0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5l11i"]
 atlas = ExtResource("1_cg4os")
-region = Rect2(133, 57, 18, 18)
+region = Rect2(133, 60, 19, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_pisg0")
+"texture": SubResource("AtlasTexture_5l11i")
 }],
 "loop": 1,
 "name": &"texture",

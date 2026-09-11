@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://qwecvtndghr3" path="res://Scripts/character.gd" id="1_ushfy"]
 [ext_resource type="Texture2D" uid="uid://2tpp6abxxuk6" path="res://Assets/Imported/Kenney/tilemap-characters.png" id="2_ushfy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_owm7s"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
 atlas = ExtResource("2_ushfy")
 region = Rect2(0, 0, 24, 24)
 
@@ -11,12 +11,23 @@ region = Rect2(0, 0, 24, 24)
 atlas = ExtResource("2_ushfy")
 region = Rect2(25, 0, 24, 24)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nytcm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_owm7s"]
 atlas = ExtResource("2_ushfy")
 region = Rect2(0, 0, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nytcm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ushfy")
+}],
+"loop": 1,
+"name": &"dashing",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_owm7s")
@@ -55,8 +66,9 @@ script = ExtResource("1_ushfy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1484172025]
 sprite_frames = SubResource("SpriteFrames_sd078")
-animation = &"walking"
+animation = &"dashing"
 autoplay = "idle"
+frame_progress = 0.29701138
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1982194937]
 shape = SubResource("CapsuleShape2D_nytcm")
