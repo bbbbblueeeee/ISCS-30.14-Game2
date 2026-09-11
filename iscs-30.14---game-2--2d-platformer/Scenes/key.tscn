@@ -198,7 +198,6 @@ frame_progress = 0.4036798
 shape = SubResource("CircleShape2D_iiq8e")
 
 [node name="Collect Text" type="Label" parent="." unique_id=1357135728]
-visible = false
 offset_left = -42.0
 offset_top = -11.0
 offset_right = 41.0

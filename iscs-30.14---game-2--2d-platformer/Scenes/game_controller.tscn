@@ -39,13 +39,13 @@ collision_mask = 2
 position = Vector2(608, 240)
 
 [node name="Extra Life" parent="Enemy/small-critter" unique_id=1277772327 instance=ExtResource("8_smyyb")]
-position = Vector2(68, -23)
+position = Vector2(0, -38)
 
 [node name="small-critter2" parent="Enemy" unique_id=1171490834 instance=ExtResource("4_k0qbb")]
 position = Vector2(791, -102)
 
 [node name="Key" parent="Enemy/small-critter2" unique_id=1447680457 instance=ExtResource("8_gruqv")]
-position = Vector2(25, -43)
+position = Vector2(20, -53)
 
 [node name="small-critter3" parent="Enemy" unique_id=2011993850 instance=ExtResource("4_k0qbb")]
 position = Vector2(-3, 6)
