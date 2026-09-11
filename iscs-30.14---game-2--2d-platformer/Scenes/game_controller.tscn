@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bf3wry4idqq15" path="res://Scenes/enemy.tscn" id="4_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://bkf4m33tfx6gk" path="res://Scenes/coin_pickup.tscn" id="5_27abl"]
 [ext_resource type="AudioStream" uid="uid://dgpdlcpud81em" path="res://Assets/Imported/Blue Archive OST 16. MX Adventure.mp3" id="6_k0qbb"]
+[ext_resource type="PackedScene" uid="uid://dv2sclccielcx" path="res://Scenes/key.tscn" id="8_gruqv"]
 [ext_resource type="PackedScene" uid="uid://c8nou5tdx5cb8" path="res://Scenes/extra_life.tscn" id="8_smyyb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sd078"]
@@ -43,11 +44,14 @@ position = Vector2(68, -23)
 [node name="small-critter2" parent="Enemy" unique_id=1171490834 instance=ExtResource("4_k0qbb")]
 position = Vector2(791, -102)
 
+[node name="Key" parent="Enemy/small-critter2" unique_id=1447680457 instance=ExtResource("8_gruqv")]
+position = Vector2(25, -43)
+
 [node name="small-critter3" parent="Enemy" unique_id=2011993850 instance=ExtResource("4_k0qbb")]
 position = Vector2(-3, 6)
 
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
-position = Vector2(152, -48)
+position = Vector2(881, -124)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(3.05, 3.05)

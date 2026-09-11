@@ -25,8 +25,12 @@ func _on_body_entered(_body: Node2D) -> void:
 			await enemy_sprite.animation_finished
 			enemy_sprite.hide()
 			
-			var extra_life = enemy.get_node_or_null("Extra Life")
-			extra_life._enemy_killed()
+			if enemy.get_node_or_null("Extra Life")!=null:
+				var extra_life = enemy.get_node_or_null("Extra Life")
+				extra_life._enemy_killed()
+			elif enemy.get_node_or_null("Key")!=null:
+				var key = enemy.get_node_or_null("Key")
+				key._enemy_killed()
 		else:
 			print("Death!")
 			SignalBus.player_died.emit()

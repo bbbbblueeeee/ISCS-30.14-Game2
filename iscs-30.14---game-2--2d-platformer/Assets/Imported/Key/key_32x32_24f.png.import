@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dptbvahn6kaso"
-path="res://.godot/imported/KeyFly1.jpeg-1cac5bcb79da7729c7d53f27dc556552.ctex"
+uid="uid://dolxwuevb4l53"
+path="res://.godot/imported/key_32x32_24f.png-1e51cf619c2d059285fd3cb9011395ba.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Imported/KeyFly/KeyFly1.jpeg"
-dest_files=["res://.godot/imported/KeyFly1.jpeg-1cac5bcb79da7729c7d53f27dc556552.ctex"]
+source_file="res://Assets/Imported/Key/key_32x32_24f.png"
+dest_files=["res://.godot/imported/key_32x32_24f.png-1e51cf619c2d059285fd3cb9011395ba.ctex"]
 
 [params]
 
