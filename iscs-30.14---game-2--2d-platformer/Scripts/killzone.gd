@@ -6,6 +6,8 @@ extends Area2D
 var enemy_dying: bool = false
 
 func _on_body_entered(_body: Node2D) -> void:
+	var enemy = get_parent()
+	var enemy_sprite = enemy.get_node_or_null("AnimatedSprite2D")
 	if enemy_dying:
 		return
 	else:
@@ -15,13 +17,16 @@ func _on_body_entered(_body: Node2D) -> void:
 			enemy_dying = true
 			print ("kill enemy")
 			_body.jump_on_enemy()
-			var enemy = get_parent()
-			var enemy_sprite = enemy.get_node_or_null("AnimatedSprite2D")
-			#$".".set_deferred("disabled", true)
 			enemy.set_physics_process(false)
+			$CollisionShape2D.set_deferred("disabled", true)
+			$"../CollisionShape2D".set_deferred("disabled", true)
+			enemy.alive = false
 			enemy_sprite.play("death")
 			await enemy_sprite.animation_finished
-			enemy.queue_free()
+			enemy_sprite.hide()
+			
+			var extra_life = enemy.get_node_or_null("Extra Life")
+			extra_life._enemy_killed()
 		else:
 			print("Death!")
 			SignalBus.player_died.emit()

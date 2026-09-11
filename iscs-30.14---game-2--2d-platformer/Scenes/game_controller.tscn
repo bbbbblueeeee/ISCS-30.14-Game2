@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bf3wry4idqq15" path="res://Scenes/enemy.tscn" id="4_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://bkf4m33tfx6gk" path="res://Scenes/coin_pickup.tscn" id="5_27abl"]
 [ext_resource type="AudioStream" uid="uid://dgpdlcpud81em" path="res://Assets/Imported/Blue Archive OST 16. MX Adventure.mp3" id="6_k0qbb"]
+[ext_resource type="PackedScene" uid="uid://c8nou5tdx5cb8" path="res://Scenes/extra_life.tscn" id="8_smyyb"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sd078"]
 distance = -36.0
@@ -31,6 +32,20 @@ position = Vector2(-432, -87)
 position = Vector2(903, 130)
 collision_mask = 2
 
+[node name="Enemy" type="Node2D" parent="." unique_id=745798073]
+
+[node name="small-critter" parent="Enemy" unique_id=383263728 instance=ExtResource("4_k0qbb")]
+position = Vector2(608, 240)
+
+[node name="Extra Life" parent="Enemy/small-critter" unique_id=1277772327 instance=ExtResource("8_smyyb")]
+position = Vector2(68, -23)
+
+[node name="small-critter2" parent="Enemy" unique_id=1171490834 instance=ExtResource("4_k0qbb")]
+position = Vector2(791, -102)
+
+[node name="small-critter3" parent="Enemy" unique_id=2011993850 instance=ExtResource("4_k0qbb")]
+position = Vector2(-3, 6)
+
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
 position = Vector2(152, -48)
 
@@ -38,16 +53,6 @@ position = Vector2(152, -48)
 zoom = Vector2(3.05, 3.05)
 limit_bottom = 400
 
-[node name="Enemy" type="Node2D" parent="." unique_id=745798073]
-
-[node name="small-critter" parent="Enemy" unique_id=383263728 instance=ExtResource("4_k0qbb")]
-position = Vector2(608, 240)
-
-[node name="small-critter2" parent="Enemy" unique_id=1171490834 instance=ExtResource("4_k0qbb")]
-position = Vector2(791, -102)
-
-[node name="small-critter3" parent="Enemy" unique_id=2011993850 instance=ExtResource("4_k0qbb")]
-position = Vector2(-3, 6)
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=836268484]
 stream = ExtResource("6_k0qbb")
 volume_db = -15.0

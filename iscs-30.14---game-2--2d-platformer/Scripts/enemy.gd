@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@export var alive: bool = true
 @onready var sprite: AnimatedSprite2D = $AnimatedSprite2D
 const SPEED = 25.0
 var direction = -1.0
