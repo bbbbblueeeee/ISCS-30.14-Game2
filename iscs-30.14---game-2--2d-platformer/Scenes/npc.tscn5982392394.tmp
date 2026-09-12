@@ -1,0 +1,117 @@
+[gd_scene format=3 uid="uid://c8dmuq7ja38lu"]
+
+[ext_resource type="Texture2D" uid="uid://2tpp6abxxuk6" path="res://Assets/Imported/Kenney/tilemap-characters.png" id="1_acqhf"]
+[ext_resource type="Script" uid="uid://dbgftmrf44kdm" path="res://Scripts/npc.gd" id="1_g6unj"]
+[ext_resource type="FontFile" uid="uid://m2tysrki5bef" path="res://Assets/Imported/Brackeys/fonts/PixelOperator8-Bold.ttf" id="3_h1ryf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxsvc"]
+atlas = ExtResource("1_acqhf")
+region = Rect2(150, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6unj"]
+atlas = ExtResource("1_acqhf")
+region = Rect2(175, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsvc")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6unj")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 6.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_g6unj"]
+script/source = "extends Node2D
+
+@onready var sprite: AnimatedSprite2D = $\"../AnimatedSprite2D\"
+@onready var left_ray: RayCast2D = $Left
+@onready var right_ray: RayCast2D = $Right
+@onready var label: Label = $Label
+@onready var area_2d: Area2D = $Area2D
+@onready var label: Label = $\"../Label\"
+
+const SPEED = 60
+var direction = 1
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	sprite.flip_h = true
+	label.hide()
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	if right_ray.is_colliding():
+		direction = -1
+		sprite.flip_h = false
+	if left_ray.is_colliding():
+		direction = 1
+		sprite.flip_h = true
+	
+	position.x += direction * SPEED * delta
+
+func detect_player_interaction():
+	if Input.is_action_just_pressed(\"Interact\"):
+		label.show()
+		await (get_tree().create_timer(5).timeout)
+		label.hide()
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	if Input.is_action_just_pressed(\"Interact\"):
+		label.show()
+		await (get_tree().create_timer(5).timeout)
+		label.hide()
+"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lgex6"]
+radius = 11.0
+height = 26.0
+
+[node name="NPC" type="Node2D" unique_id=1647988912]
+script = ExtResource("1_g6unj")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=121326599]
+sprite_frames = SubResource("SpriteFrames_sd078")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="NPC Area" type="Area2D" parent="." unique_id=493113713]
+script = SubResource("GDScript_g6unj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NPC Area" unique_id=1185926274]
+shape = SubResource("CapsuleShape2D_lgex6")
+
+[node name="Left" type="RayCast2D" parent="." unique_id=228250972]
+target_position = Vector2(-14, 0)
+
+[node name="Right" type="RayCast2D" parent="." unique_id=687801022]
+target_position = Vector2(14, 0)
+
+[node name="Label" type="Label" parent="." unique_id=756334170]
+offset_left = -49.0
+offset_top = -30.0
+offset_right = 51.0
+offset_bottom = -10.0
+theme_override_fonts/font = ExtResource("3_h1ryf")
+theme_override_font_sizes/font_size = 8
+text = "u smell"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="body_entered" from="NPC Area" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_entered" from="NPC Area" to="." method="_on_npc_area_body_entered"]

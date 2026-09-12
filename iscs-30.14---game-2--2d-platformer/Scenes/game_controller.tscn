@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bf3wry4idqq15" path="res://Scenes/enemy.tscn" id="4_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://bkf4m33tfx6gk" path="res://Scenes/coin_pickup.tscn" id="5_27abl"]
 [ext_resource type="AudioStream" uid="uid://dgpdlcpud81em" path="res://Assets/Imported/Blue Archive OST 16. MX Adventure.mp3" id="6_k0qbb"]
+[ext_resource type="PackedScene" uid="uid://c8dmuq7ja38lu" path="res://Scenes/npc.tscn" id="7_h1rn0"]
 [ext_resource type="PackedScene" uid="uid://dv2sclccielcx" path="res://Scenes/key.tscn" id="8_gruqv"]
 [ext_resource type="PackedScene" uid="uid://c8nou5tdx5cb8" path="res://Scenes/extra_life.tscn" id="8_smyyb"]
 
@@ -44,6 +45,9 @@ position = Vector2(-432, -87)
 position = Vector2(903, 130)
 collision_mask = 2
 
+[node name="NPC1" parent="." unique_id=1647988912 instance=ExtResource("7_h1rn0")]
+position = Vector2(-607, -66)
+
 [node name="Enemy" type="Node2D" parent="." unique_id=745798073]
 
 [node name="small-critter" parent="Enemy" unique_id=383263728 instance=ExtResource("4_k0qbb")]
@@ -62,7 +66,7 @@ position = Vector2(20, -53)
 position = Vector2(-3, 6)
 
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
-position = Vector2(-35, -94)
+position = Vector2(-69, -90)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(3.05, 3.05)
