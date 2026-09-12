@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bkf4m33tfx6gk"]
 
-[ext_resource type="Script" uid="uid://i7ywg1dde5lu" path="res://Scenes/coin_pickup.gd" id="1_ugo37"]
+[ext_resource type="Script" uid="uid://i7ywg1dde5lu" path="res://Scripts/coin_pickup.gd" id="1_ugo37"]
 [ext_resource type="Texture2D" uid="uid://rwt3m2hn6j6o" path="res://Assets/Imported/Kenney/tilemap-base_tiles.png" id="2_4shbp"]
 [ext_resource type="FontFile" uid="uid://m2tysrki5bef" path="res://Assets/Imported/Brackeys/fonts/PixelOperator8-Bold.ttf" id="3_3ufb4"]
 
@@ -33,15 +33,18 @@ autoplay = "texture"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=343402930]
 shape = SubResource("CircleShape2D_42pb2")
 
-[node name="Collect Text" type="Label" parent="." unique_id=1820900117]
+[node name="Collect Text" type="Label" parent="." unique_id=2102304932]
 offset_left = -41.0
 offset_top = -8.0
 offset_right = 42.0
 offset_bottom = 11.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 7
 theme_override_fonts/font = ExtResource("3_3ufb4")
 theme_override_font_sizes/font_size = 8
-text = "Dash
-Unlocked!"
+text = "Dash Unlocked!"
 horizontal_alignment = 1
 vertical_alignment = 1
 

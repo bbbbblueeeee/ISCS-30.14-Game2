@@ -15,3 +15,5 @@ func _on_body_entered(_body: Node2D) -> void:
 	hitbox.queue_free()
 	sprite.queue_free()
 	text.show()
+	await (get_tree().create_timer(5).timeout)
+	text.hide()
