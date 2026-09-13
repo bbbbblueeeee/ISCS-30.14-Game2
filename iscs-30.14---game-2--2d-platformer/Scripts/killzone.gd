@@ -34,10 +34,3 @@ func _on_body_entered(_body: Node2D) -> void:
 		else:
 			print("Death!")
 			SignalBus.player_died.emit()
-
-# Useless function. Erase this + the Timer at the end when you're sure of
-# no bugs.
-func _on_timer_timeout() -> void:
-	pass
-	# Engine.time_scale = 1.0
-	# get_tree().reload_current_scene()
