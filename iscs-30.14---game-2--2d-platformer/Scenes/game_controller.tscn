@@ -52,6 +52,7 @@ animations = [{
 script = ExtResource("1_ppfu0")
 
 [node name="LifeController" parent="." unique_id=737078836 instance=ExtResource("2_u4s5x")]
+visible = false
 offset = Vector2(40, 40)
 transform = Transform2D(1, 0, 0, 1, 40, 40)
 
@@ -107,7 +108,7 @@ position = Vector2(20, -53)
 position = Vector2(-3, 6)
 
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
-position = Vector2(-69, -90)
+position = Vector2(841, 220)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(3.05, 3.05)
