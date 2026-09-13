@@ -1,0 +1,73 @@
+[gd_scene format=3 uid="uid://ber4qck0axwab"]
+
+[ext_resource type="Texture2D" uid="uid://rwt3m2hn6j6o" path="res://Assets/Imported/Kenney/tilemap-base_tiles.png" id="1_ecpv2"]
+[ext_resource type="Script" uid="uid://d2yeab0qy0sfm" path="res://Scripts/life_controller.gd" id="1_htlh5"]
+[ext_resource type="FontFile" uid="uid://m2tysrki5bef" path="res://Assets/Imported/Brackeys/fonts/PixelOperator8-Bold.ttf" id="3_gady7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htlh5"]
+atlas = ExtResource("1_ecpv2")
+region = Rect2(114, 38, 18, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gady7"]
+atlas = ExtResource("1_ecpv2")
+region = Rect2(76, 38, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_htlh5")
+}],
+"loop": 1,
+"name": &"empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gady7")
+}],
+"loop": 1,
+"name": &"full",
+"speed": 5.0
+}]
+
+[node name="LifeController" type="CanvasLayer" unique_id=737078836]
+script = ExtResource("1_htlh5")
+
+[node name="Life1" type="AnimatedSprite2D" parent="." unique_id=1364566782]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_sd078")
+animation = &"full"
+autoplay = "full"
+
+[node name="Life2" type="AnimatedSprite2D" parent="." unique_id=1835582299]
+position = Vector2(100, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_sd078")
+animation = &"full"
+autoplay = "full"
+
+[node name="Life3" type="AnimatedSprite2D" parent="." unique_id=1752215960]
+position = Vector2(200, 0)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_sd078")
+animation = &"full"
+autoplay = "full"
+
+[node name="Death Text" type="Label" parent="." unique_id=1192313303]
+offset_left = 111.0
+offset_top = 153.0
+offset_right = 959.0
+offset_bottom = 424.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 5
+theme_override_constants/paragraph_spacing = 0
+theme_override_constants/outline_size = 40
+theme_override_fonts/font = ExtResource("3_gady7")
+theme_override_font_sizes/font_size = 64
+text = "You Died!
+
+Your lover is
+lost forever..."
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -2,21 +2,24 @@ extends CharacterBody2D
 
 @onready var animations: AnimatedSprite2D = $AnimatedSprite2D
 @onready var respawn_timer: Timer = $RespawnTimer
+@export var dash_speed = 400
 const SPEED = 200.0
 const JUMP_VELOCITY = -300.0
 const SPAWNPOINT = Vector2(152.0,-48.0)
 var is_alive: bool = true
+var can_respawn:bool = true
 var lives: int = 3
-@export var dash_speed = 400
 var double_jump_unlocked: bool = false
 var can_double_jump: bool = false
 var dash_unlocked: bool = false
 var can_dash: bool = true
 var is_dashing: bool = false
 var last_direction = -1.0
+signal update_lives_count(lives)
 
 func _ready() -> void:
 	SignalBus.player_died.connect(death)
+	SignalBus.player_gained_life.connect(pick_up_life)
 
 func _physics_process(delta: float) -> void:
 	if is_alive:
@@ -88,20 +91,29 @@ func death():
 	if is_alive:
 		is_alive = false
 		lives -= 1
+		if lives == 0:
+			can_respawn = false
+		update_lives_count.emit(lives)
 		Engine.time_scale = 0.5
 		var tween = create_tween()
 		respawn_timer.start()
 		tween.tween_property(animations,"position",Vector2(0,-20),0.1)
 		tween.tween_property(animations,"position",Vector2(0,200),0.4)
-		tween.tween_property(animations,"position",Vector2(0,0),0)
+		if can_respawn:
+			tween.tween_property(animations,"position",Vector2(0,0),0)
 
 func respawn():
-	global_position = SPAWNPOINT
-	is_alive = true
-	Engine.time_scale = 1.0
-	print(lives)
+	if can_respawn:
+		global_position = SPAWNPOINT
+		is_alive = true
+		Engine.time_scale = 1.0
+		print(lives)
+	
 func unlock_dash():
 	dash_unlocked = true
+
+func pick_up_life():
+	lives += 1
 
 func tween(node,property,target_value,duration):
 	var tween = create_tween()

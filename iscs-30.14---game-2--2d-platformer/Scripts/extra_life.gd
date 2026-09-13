@@ -4,7 +4,6 @@ extends Area2D
 @onready var hitbox: CollisionShape2D = $CollisionShape2D
 @onready var text: Label = $"Collect Text"
 
-signal player_gained_life
 
 func _ready() -> void:
 	text.hide()
@@ -17,7 +16,7 @@ func _enemy_killed() -> void:
 	hitbox.set_deferred("disabled", false)
 
 func _on_body_entered(_body: Node2D) -> void:
-	player_gained_life.emit()
+	SignalBus.player_gained_life.emit()
 	hitbox.queue_free()
 	sprite.queue_free()
 	text.show()
