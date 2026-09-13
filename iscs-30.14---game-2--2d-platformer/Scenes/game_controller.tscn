@@ -68,22 +68,49 @@ shape = SubResource("WorldBoundaryShape2D_sd078")
 [node name="Birds" type="Node2D" parent="World" unique_id=1748924274]
 
 [node name="Bird1" parent="World/Birds" unique_id=942859575 instance=ExtResource("4_g3622")]
-position = Vector2(800, -250)
+position = Vector2(1694, -118)
+min_x = 1550.0
+max_x = 1800.0
 
 [node name="Bird2" parent="World/Birds" unique_id=577817231 instance=ExtResource("4_g3622")]
-position = Vector2(623, -80)
-min_x = 300.0
-max_x = 625.0
+position = Vector2(-548, -255)
+min_x = -800.0
+max_x = -400.0
+
+[node name="Bird3" parent="World/Birds" unique_id=2054120664 instance=ExtResource("4_g3622")]
+position = Vector2(-367, -64)
+min_x = -450.0
+max_x = -325.0
+
+[node name="Bird4" parent="World/Birds" unique_id=1025075174 instance=ExtResource("4_g3622")]
+position = Vector2(-1213, -111)
+min_x = -1400.0
+max_x = -1050.0
+
+[node name="Bird5" parent="World/Birds" unique_id=258131883 instance=ExtResource("4_g3622")]
+position = Vector2(-1750, -603)
+min_x = -1950.0
+max_x = -1600.0
+
+[node name="Bird6" parent="World/Birds" unique_id=1921167242 instance=ExtResource("4_g3622")]
+position = Vector2(-1708, -1007)
+min_x = -1800.0
+max_x = -1600.0
+
+[node name="Bird7" parent="World/Birds" unique_id=1474021345 instance=ExtResource("4_g3622")]
+position = Vector2(-2281, -874)
+min_x = -2300.0
+max_x = -2050.0
 
 [node name="Diamond Pickup" parent="." unique_id=1783640914 instance=ExtResource("3_goscw")]
-position = Vector2(-432, -87)
+position = Vector2(1899, -235)
 
 [node name="Coin Pickup" parent="." unique_id=780580374 instance=ExtResource("5_27abl")]
-position = Vector2(903, 130)
+position = Vector2(-746, -24)
 collision_mask = 2
 
 [node name="NPC1" parent="." unique_id=1647988912 instance=ExtResource("7_h1rn0")]
-position = Vector2(-607, -66)
+position = Vector2(-448, 24)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC1" unique_id=1401443668]
 sprite_frames = SubResource("SpriteFrames_ca101")
@@ -93,13 +120,13 @@ autoplay = "walking"
 [node name="Enemy" type="Node2D" parent="." unique_id=745798073]
 
 [node name="small-critter" parent="Enemy" unique_id=383263728 instance=ExtResource("4_k0qbb")]
-position = Vector2(608, 240)
+position = Vector2(814, 240)
 
 [node name="Extra Life" parent="Enemy/small-critter" unique_id=1277772327 instance=ExtResource("8_smyyb")]
 position = Vector2(0, -38)
 
 [node name="small-critter2" parent="Enemy" unique_id=1171490834 instance=ExtResource("4_k0qbb")]
-position = Vector2(791, -102)
+position = Vector2(-1417, -948)
 
 [node name="Key" parent="Enemy/small-critter2" unique_id=1447680457 instance=ExtResource("8_gruqv")]
 position = Vector2(20, -53)
@@ -107,8 +134,41 @@ position = Vector2(20, -53)
 [node name="small-critter3" parent="Enemy" unique_id=2011993850 instance=ExtResource("4_k0qbb")]
 position = Vector2(-3, 6)
 
+[node name="small-critter4" parent="Enemy" unique_id=1986754267 instance=ExtResource("4_k0qbb")]
+position = Vector2(1383, -66)
+
+[node name="small-critter5" parent="Enemy" unique_id=1467433295 instance=ExtResource("4_k0qbb")]
+position = Vector2(1515, -66)
+
+[node name="small-critter6" parent="Enemy" unique_id=395968925 instance=ExtResource("4_k0qbb")]
+position = Vector2(2015, -120)
+
+[node name="Extra Life" parent="Enemy/small-critter6" unique_id=2072918199 instance=ExtResource("8_smyyb")]
+position = Vector2(0, -38)
+
+[node name="small-critter7" parent="Enemy" unique_id=312026073 instance=ExtResource("4_k0qbb")]
+position = Vector2(-358, 24)
+
+[node name="small-critter8" parent="Enemy" unique_id=9854266 instance=ExtResource("4_k0qbb")]
+position = Vector2(-633, 24)
+
+[node name="small-critter9" parent="Enemy" unique_id=2128766742 instance=ExtResource("4_k0qbb")]
+position = Vector2(-873, 24)
+
+[node name="small-critter10" parent="Enemy" unique_id=1172288892 instance=ExtResource("4_k0qbb")]
+position = Vector2(-1050, 24)
+
+[node name="small-critter11" parent="Enemy" unique_id=1524037781 instance=ExtResource("4_k0qbb")]
+position = Vector2(-597, -366)
+
+[node name="small-critter12" parent="Enemy" unique_id=891152467 instance=ExtResource("4_k0qbb")]
+position = Vector2(-1433, -516)
+
+[node name="small-critter13" parent="Enemy" unique_id=1206220261 instance=ExtResource("4_k0qbb")]
+position = Vector2(-2269, -708)
+
 [node name="Character" parent="." unique_id=1376504322 instance=ExtResource("1_nqxm2")]
-position = Vector2(841, 220)
+position = Vector2(152, -48)
 
 [node name="Camera2D" type="Camera2D" parent="Character" unique_id=659821157]
 zoom = Vector2(3.05, 3.05)

@@ -34,10 +34,10 @@ autoplay = "texture"
 shape = SubResource("CircleShape2D_42pb2")
 
 [node name="Collect Text" type="Label" parent="." unique_id=2102304932]
-offset_left = -41.0
-offset_top = -8.0
-offset_right = 42.0
-offset_bottom = 11.0
+offset_left = -52.0
+offset_top = -9.0
+offset_right = 52.0
+offset_bottom = 10.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 5
 theme_override_constants/paragraph_spacing = 0
