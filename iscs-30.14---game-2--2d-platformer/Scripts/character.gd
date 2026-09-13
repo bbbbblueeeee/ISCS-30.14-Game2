@@ -90,7 +90,7 @@ func jump_on_enemy():
 func death():
 	if is_alive:
 		is_alive = false
-		lives -= 1
+		lives = clamp(lives-1,0,3)
 		if lives == 0:
 			can_respawn = false
 		update_lives_count.emit(lives)
@@ -113,7 +113,7 @@ func unlock_dash():
 	dash_unlocked = true
 
 func pick_up_life():
-	lives += 1
+	lives = clamp(lives+1,0,3)
 
 func tween(node,property,target_value,duration):
 	var tween = create_tween()

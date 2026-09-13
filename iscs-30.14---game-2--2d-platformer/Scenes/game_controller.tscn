@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://dv2sclccielcx" path="res://Scenes/key.tscn" id="8_gruqv"]
 [ext_resource type="PackedScene" uid="uid://c8nou5tdx5cb8" path="res://Scenes/extra_life.tscn" id="8_smyyb"]
 [ext_resource type="Texture2D" uid="uid://2tpp6abxxuk6" path="res://Assets/Imported/Kenney/tilemap-characters.png" id="9_yg1k2"]
+[ext_resource type="FontFile" uid="uid://m2tysrki5bef" path="res://Assets/Imported/Brackeys/fonts/PixelOperator8-Bold.ttf" id="10_ca101"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sd078"]
 distance = -36.0
@@ -48,11 +49,76 @@ animations = [{
 "speed": 6.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca101"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(100, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dhp01"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(125, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ca101")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dhp01")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s36fr"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(0, 25, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_de0qv"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(25, 25, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pwwgx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s36fr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_de0qv")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 5.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qvxum"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(50, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m4tpd"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(75, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lgex6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qvxum")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m4tpd")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 5.0
+}]
+
 [node name="GameController" type="Node2D" unique_id=1808007495]
 script = ExtResource("1_ppfu0")
 
 [node name="LifeController" parent="." unique_id=737078836 instance=ExtResource("2_u4s5x")]
-visible = false
 offset = Vector2(40, 40)
 transform = Transform2D(1, 0, 0, 1, 40, 40)
 
@@ -109,13 +175,95 @@ position = Vector2(1899, -235)
 position = Vector2(-746, -24)
 collision_mask = 2
 
-[node name="NPC1" parent="." unique_id=1647988912 instance=ExtResource("7_h1rn0")]
-position = Vector2(-448, 24)
+[node name="NPCs" type="Node2D" parent="." unique_id=498848317]
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC1" unique_id=1401443668]
+[node name="NPC1" parent="NPCs" unique_id=1647988912 instance=ExtResource("7_h1rn0")]
+position = Vector2(-326.165, 24)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/NPC1" unique_id=1401443668]
 sprite_frames = SubResource("SpriteFrames_ca101")
 animation = &"walking"
 autoplay = "walking"
+
+[node name="Label" type="Label" parent="NPCs/NPC1" unique_id=1860521852]
+offset_left = -52.0
+offset_top = -32.0
+offset_right = 54.0
+offset_bottom = -12.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_ca101")
+theme_override_font_sizes/font_size = 8
+text = "The birds are
+quite friendly!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPC2" parent="NPCs" unique_id=1043485209 instance=ExtResource("7_h1rn0")]
+position = Vector2(-1273.895, 6)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/NPC2" unique_id=4326095]
+sprite_frames = SubResource("SpriteFrames_sd078")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="Label" type="Label" parent="NPCs/NPC2" unique_id=443701016]
+offset_left = -65.10498
+offset_top = -33.0
+offset_right = 59.89502
+offset_bottom = -13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_ca101")
+theme_override_font_sizes/font_size = 8
+text = "Someone's calling
+for help inside!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NPC3" parent="NPCs" unique_id=34515053 instance=ExtResource("7_h1rn0")]
+position = Vector2(783.49, -174)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/NPC3" unique_id=468886419]
+sprite_frames = SubResource("SpriteFrames_pwwgx")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="Label" type="Label" parent="NPCs/NPC3" unique_id=1421260427]
+offset_left = -81.48999
+offset_top = -33.0
+offset_right = 80.51001
+offset_bottom = -13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_ca101")
+theme_override_font_sizes/font_size = 8
+text = "Ever seen snow? Just
+climb the trees!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Lover" parent="NPCs" unique_id=949598144 instance=ExtResource("7_h1rn0")]
+position = Vector2(-1341.325, 186)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPCs/Lover" unique_id=807149285]
+sprite_frames = SubResource("SpriteFrames_lgex6")
+animation = &"walking"
+autoplay = "walking"
+
+[node name="Label" type="Label" parent="NPCs/Lover" unique_id=1637783932]
+offset_left = -78.0
+offset_top = -33.0
+offset_right = 84.0
+offset_bottom = -13.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("10_ca101")
+theme_override_font_sizes/font_size = 8
+text = "My love! Thank you for 
+saving me! Mwah! <3"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Enemy" type="Node2D" parent="." unique_id=745798073]
 
