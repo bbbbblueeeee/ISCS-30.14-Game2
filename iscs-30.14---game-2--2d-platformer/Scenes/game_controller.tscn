@@ -13,9 +13,40 @@
 [ext_resource type="PackedScene" uid="uid://c8dmuq7ja38lu" path="res://Scenes/npc.tscn" id="7_h1rn0"]
 [ext_resource type="PackedScene" uid="uid://dv2sclccielcx" path="res://Scenes/key.tscn" id="8_gruqv"]
 [ext_resource type="PackedScene" uid="uid://c8nou5tdx5cb8" path="res://Scenes/extra_life.tscn" id="8_smyyb"]
+[ext_resource type="Texture2D" uid="uid://2tpp6abxxuk6" path="res://Assets/Imported/Kenney/tilemap-characters.png" id="9_yg1k2"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_sd078"]
 distance = -36.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxsvc"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(150, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g6unj"]
+atlas = ExtResource("9_yg1k2")
+region = Rect2(175, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ca101"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsvc")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xxsvc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g6unj")
+}],
+"loop": 1,
+"name": &"walking",
+"speed": 6.0
+}]
 
 [node name="GameController" type="Node2D" unique_id=1808007495]
 script = ExtResource("1_ppfu0")
@@ -52,6 +83,11 @@ collision_mask = 2
 
 [node name="NPC1" parent="." unique_id=1647988912 instance=ExtResource("7_h1rn0")]
 position = Vector2(-607, -66)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="NPC1" unique_id=1401443668]
+sprite_frames = SubResource("SpriteFrames_ca101")
+animation = &"walking"
+autoplay = "walking"
 
 [node name="Enemy" type="Node2D" parent="." unique_id=745798073]
 
