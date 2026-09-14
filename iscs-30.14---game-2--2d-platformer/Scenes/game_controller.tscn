@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://vaime48v1to1" path="res://Scenes/bird.tscn" id="4_g3622"]
 [ext_resource type="PackedScene" uid="uid://bf3wry4idqq15" path="res://Scenes/enemy.tscn" id="4_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://bkf4m33tfx6gk" path="res://Scenes/coin_pickup.tscn" id="5_27abl"]
+[ext_resource type="PackedScene" uid="uid://dgq0oa1p1c46f" path="res://Scenes/lock.tscn" id="5_dhp01"]
 [ext_resource type="AudioStream" uid="uid://dgpdlcpud81em" path="res://Assets/Imported/Blue Archive OST 16. MX Adventure.mp3" id="6_k0qbb"]
 [ext_resource type="PackedScene" uid="uid://c8dmuq7ja38lu" path="res://Scenes/npc.tscn" id="7_h1rn0"]
 [ext_resource type="PackedScene" uid="uid://dv2sclccielcx" path="res://Scenes/key.tscn" id="8_gruqv"]
@@ -130,6 +131,18 @@ position = Vector2(-1, 275)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Killzone" unique_id=1816117509]
 position = Vector2(2, 110)
 shape = SubResource("WorldBoundaryShape2D_sd078")
+
+[node name="Locks" type="Node2D" parent="World" unique_id=56572036]
+position = Vector2(-1300, 0)
+
+[node name="Lock" parent="World/Locks" unique_id=1846408345 instance=ExtResource("5_dhp01")]
+position = Vector2(-59, -27)
+
+[node name="Lock2" parent="World/Locks" unique_id=1011817166 instance=ExtResource("5_dhp01")]
+position = Vector2(-59, -9)
+
+[node name="Lock3" parent="World/Locks" unique_id=607693714 instance=ExtResource("5_dhp01")]
+position = Vector2(-59, 9)
 
 [node name="Birds" type="Node2D" parent="World" unique_id=1748924274]
 

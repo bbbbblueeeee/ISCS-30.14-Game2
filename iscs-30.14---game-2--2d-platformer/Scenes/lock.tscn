@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dgq0oa1p1c46f"]
+
+[ext_resource type="Texture2D" uid="uid://rwt3m2hn6j6o" path="res://Assets/Imported/Kenney/tilemap-base_tiles.png" id="1_xn2vg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv4u3"]
+atlas = ExtResource("1_xn2vg")
+region = Rect2(152, 19, 18, 18)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sd078"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv4u3")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sd078"]
+size = Vector2(18, 18)
+
+[node name="Lock" type="CharacterBody2D" unique_id=1684565519]
+collision_layer = 3
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=197547185]
+sprite_frames = SubResource("SpriteFrames_sd078")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=323232938]
+shape = SubResource("RectangleShape2D_sd078")

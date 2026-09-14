@@ -10,7 +10,6 @@ func _ready() -> void:
 	text.hide()
 
 func _on_body_entered(_body: Node2D) -> void:
-	print("hey")
 	player_unlocked_dash.emit()
 	hitbox.queue_free()
 	sprite.queue_free()

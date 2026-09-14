@@ -11,7 +11,6 @@ func _ready() -> void:
 	hitbox.set_deferred("disabled", true)
 
 func _enemy_killed() -> void:
-	print("Extra life spawned and hitbox enabled!")
 	sprite.show()
 	hitbox.set_deferred("disabled", false)
 

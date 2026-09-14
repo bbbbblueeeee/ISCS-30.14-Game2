@@ -14,11 +14,7 @@ func _ready() -> void:
 	life_2.play("full")
 	life_3.play("full")
 	life_tracker = 3
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	
 
 func reduce_life(life_reference):
 	life_tracker = clamp(life_reference,0,3)

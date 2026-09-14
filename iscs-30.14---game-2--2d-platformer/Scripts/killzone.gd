@@ -12,10 +12,8 @@ func _on_body_entered(_body: Node2D) -> void:
 		return
 	else:
 		var y_delta = global_position.y - _body.global_position.y
-		print(y_delta)
 		if (y_delta > 9):
 			enemy_dying = true
-			print ("kill enemy")
 			_body.jump_on_enemy()
 			enemy.set_physics_process(false)
 			$CollisionShape2D.set_deferred("disabled", true)
@@ -32,5 +30,4 @@ func _on_body_entered(_body: Node2D) -> void:
 				var key = enemy.get_node_or_null("Key")
 				key._enemy_killed()
 		else:
-			print("Death!")
 			SignalBus.player_died.emit()

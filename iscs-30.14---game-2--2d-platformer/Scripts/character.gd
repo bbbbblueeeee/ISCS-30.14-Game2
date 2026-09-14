@@ -107,7 +107,6 @@ func respawn():
 		global_position = SPAWNPOINT
 		is_alive = true
 		Engine.time_scale = 1.0
-		print(lives)
 	
 func unlock_dash():
 	dash_unlocked = true
